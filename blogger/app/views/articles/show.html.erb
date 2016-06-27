@@ -11,9 +11,15 @@
 <div class ="wrapper style2">
 <h3> comments (<%= @article.comments.size %>) </h3>
 <%= render partial: 'articles/comment', collection: @article.comments %>
-</h3>
+<code>
+	tags:
+	<% @article.tags.each do |tag| %>
+	<%= link_to tag.name, tag_path(tag) %>
+	<% end -%>
+</code>>
+
 </div>
 </div>
 <%= render partial: 'comments/form'%>
 
-<%= link_to "BACK TO THE LIST O BLOGGINGS ", articles_path, class: "button fit" %>
+<%= link_to "back to the bloggings", articles_path, class: "button fit" %>

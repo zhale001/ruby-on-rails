@@ -1,0 +1,12 @@
+<div class="wrapper style2">
+<h2>bloggings with <strong>dis</strong> tag</h2>
+</div>
+<ul class="alt">
+	<% @tag.articles.each do |article|%>
+	<li><%= link_to article.title, article_path(article)%></li>
+	<% end -%>	
+</ul>
+<p><%= link_to "list all the taggings", tags_path%></p>
+<div class="wrapper style2">
+<%= link_to "back to the bloggings", articles_path, class: "button fit" %>
+</div>

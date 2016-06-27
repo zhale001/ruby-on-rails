@@ -1,0 +1,13 @@
+<div class="wrapper style2"><h1> <strong>Deez</strong> Taggings</h1>
+</div>
+<div class="wrapper style2">
+<ul class="alt">
+  <% @tags.each do |tag| %>
+    <li>
+      <%= link_to tag.name, tag_path(tag) %>
+
+    </li>
+  <% end %>
+  </ul>
+  </div>
+  <%= link_to "back to the bloggings", articles_path, class: "button fit" %>
