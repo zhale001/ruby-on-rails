@@ -1,12 +1,14 @@
-<h1> <strong>Deez</strong> Bloggings</h1>
-
-<ul id="articles">
+<div class="wrapper style2"><h1> <strong>Deez</strong> Bloggings</h1>
+</div>
+<div class="wrapper style2">
+<ul class="alt">
   <% @articles.each do |article| %>
     <li>
       <%= link_to article.title, article_path(article), class: 'article_title' %>
 
     </li>
   <% end %>
+  </ul>
+  </div>
 <br>
-  <%= link_to "Make A New Blogging, Dude", new_article_path, class: 'button big' %>
-</ul>
+  <%= link_to "Make A New Blogging, Dude", new_article_path, class: 'button big fit' %>
