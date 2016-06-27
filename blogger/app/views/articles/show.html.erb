@@ -1,0 +1,8 @@
+<h1> <%= link_to @article.title, article_path %> </h1>
+<p class="special"><%= @article.body %></p>
+
+<%= link_to "delete dis bloggings", article_path(@article), method: :delete,data:{confirm: "you're deleting me bruh?"}, class: "button small" %>
+<%= link_to "edit dis bloggings", edit_article_path(@article), class: "button small" %>
+<br><br><br>
+
+<%= link_to "BACK TO THE LIST O BLOGGINGS ", articles_path, class: "button" %>
