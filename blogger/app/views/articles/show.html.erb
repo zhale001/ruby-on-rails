@@ -1,8 +1,16 @@
 <div class="wrapper style2">
 <div class="wrapper style2">
-<h1> <%= link_to @article.title, article_path, class: "special" %> </h1>
+<h1> <%= link_to @article.title, article_path %> </h1>
+<p><%if @article.image.exists?%>
+<%= image_tag @article.image.url %></p>
+<% end -%>
 <article class=""><%= @article.body %></article>
-</div>
+<code>
+	tags:
+	<% @article.tags.each do |tag| %>
+	<%= link_to tag.name, tag_path(tag) %>
+	<% end -%>
+</code>></div>
 <%= link_to "delete dis bloggings", article_path(@article), method: :delete,data:{confirm: "you're deleting me bruh?"}, class: "button  small" %>
 <%= link_to "edit dis bloggings", edit_article_path(@article), class: "button small" %>
 <br>
@@ -11,12 +19,7 @@
 <div class ="wrapper style2">
 <h3> comments (<%= @article.comments.size %>) </h3>
 <%= render partial: 'articles/comment', collection: @article.comments %>
-<code>
-	tags:
-	<% @article.tags.each do |tag| %>
-	<%= link_to tag.name, tag_path(tag) %>
-	<% end -%>
-</code>>
+
 
 </div>
 </div>
